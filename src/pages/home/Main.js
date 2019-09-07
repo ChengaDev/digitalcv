@@ -5,9 +5,9 @@ class Main extends React.Component {
     render() {
         return(
             <MainPageWrapper>
-                אל תהיה מסמך בערימת קורות חיים!
+                Welcome to Digital CV!
                 <br />
-                Don't be  a document!
+                Don't be a document!
             </MainPageWrapper>
         );
     };

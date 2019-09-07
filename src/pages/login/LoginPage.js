@@ -5,6 +5,7 @@ class LoginPage extends React.Component {
         return(
             <div>
                 Login Page
+                <input type="text" />
             </div>
         );
     }
