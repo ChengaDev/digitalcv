@@ -4,7 +4,7 @@ import LoginPage from '../pages/LoginPage';
 import Main from '../pages/Main';
 
 const App = () => {
-    return( 
+    return(         
         <BrowserRouter>
             <Route path="/" component={Main} />
             <Switch>
