@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Header extends React.Component {
     constructor(props, context) {
@@ -12,16 +12,16 @@ class Header extends React.Component {
             <HeaderWrapper>
                 <HeaderTitle>קורות חיים דיגיטליים</HeaderTitle>
                 <HeaderItemsContainer>
-                    <HeaderItem selected={true}>
+                    <HeaderItem selected={this.props.location.pathname === '/'}>
                         <Link to='/'>בית</Link>
                     </HeaderItem>
-                    <HeaderItem selected={false}>
+                    <HeaderItem selected={this.props.location.pathname === '/models'}>
                         <Link to='/models'>דוגמאות</Link>
                     </HeaderItem>
-                    <HeaderItem selected={false}>
+                    <HeaderItem selected={this.props.location.pathname === '/about'}>
                         <Link to='/about'>עלינו</Link>
                     </HeaderItem>
-                    <HeaderItem selected={false}>
+                    <HeaderItem selected={this.props.location.pathname === '/contactus'}>
                         <Link to='/contactus'>צור קשר</Link>
                     </HeaderItem>
                 </HeaderItemsContainer>
@@ -91,4 +91,4 @@ const HeaderItem = styled.div`
     box-sizing: border-box;
 `;
 
-export default Header;
+export default withRouter(Header);
