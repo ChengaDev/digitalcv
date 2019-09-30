@@ -9,7 +9,7 @@ class Header extends React.Component {
         this.toggleMenuIcon = this.toggleMenuIcon.bind(this);
         this.onMenuIconClicked = this.onMenuIconClicked.bind(this);
         this.onLinkClicked = this.onLinkClicked.bind(this);
-
+ 
         this.state = {
             isMobileMenuOpen: false
         };

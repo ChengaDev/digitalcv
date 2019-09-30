@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LoginPage from './pages/login/LoginPage';
 import Main from './pages/home/Main';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
+import Header from '../components/layout/header/Header';
+import Footer from '../components/layout/footer/Footer';
 import ContactUsPage from './pages/contactUs/ContactUsPage';
 import AboutPage from './pages/about/AboutPage';
 
