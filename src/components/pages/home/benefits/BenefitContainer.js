@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class BenefitContainer extends React.Component {
+class BenefitSection extends React.Component {
     constructor(props, context) {
         super(props, context);
     }
@@ -54,4 +54,4 @@ const Container = styled.div`
     flex-direction: row;
 `;
 
-export default BenefitContainer;
+export default BenefitSection;
