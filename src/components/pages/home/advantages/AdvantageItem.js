@@ -2,18 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 class AdvantangeItem extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-    }
+  constructor(props, context) {
+    super(props, context);
+  }
 
-    render() {
-        return(
-            <ItemWrapper icon={this.props.icon}>
-                <h4>{this.props.title}</h4>
-                <p>{this.props.content}</p>
-            </ItemWrapper>
-        );
-    }
+  render() {
+    return (
+      <ItemWrapper icon={this.props.icon}>
+        <h4>{this.props.title}</h4>
+        <p>{this.props.content}</p>
+      </ItemWrapper>
+    );
+  }
 }
 
 const ItemWrapper = styled.div`
@@ -38,15 +38,15 @@ const ItemWrapper = styled.div`
         border-radius: 50px;
         background-color: #6e8dcc;
         box-shadow: 0 0 3px rgba(0,0,0,.7);
-        color #fff;
+        color: ${props => props.theme.colors.white};
         font-weight: 900;
-        font-size: 50px;
+        font-size: ${props => props.theme.fontSizes.fontSize10};
         line-height: 100px;        
         font-family: 'Material Icons';
         content: "${props => props.icon}";
     }
     
-    :hover {
+    &:hover {
         &:before {
             animation: bgHover 1s;
             background-color: #6e8dcc;
@@ -58,7 +58,7 @@ const ItemWrapper = styled.div`
     }
 
     & p {
-        font-size: 20px;
+        font-size: ${props => props.theme.fontSizes.fontSize4};
         padding-left: 20px;
         padding-right: 20px;
     }

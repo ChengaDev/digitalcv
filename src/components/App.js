@@ -8,18 +8,18 @@ import ContactUsPage from './pages/contactUs/ContactUsPage';
 import AboutPage from './pages/about/AboutPage';
 
 const App = () => {
-    return(         
-        <BrowserRouter>              
-            <Header />  
-                <Switch>
-                    <Route exact path="/" component={Main} />
-                    <Route exact path="/about" component={AboutPage} />
-                    <Route exact path="/contactus" component={ContactUsPage} />
-                    <Route exact path="/login" component={LoginPage} />
-                </Switch>
-            <Footer />
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={Main} />
+        <Route exact path='/about' component={AboutPage} />
+        <Route exact path='/contactus' component={ContactUsPage} />
+        <Route exact path='/login' component={LoginPage} />
+      </Switch>
+      <Footer />
+    </BrowserRouter>
+  );
 };
 
 export default App;

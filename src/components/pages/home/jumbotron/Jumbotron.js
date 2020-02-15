@@ -3,23 +3,24 @@ import styled from 'styled-components';
 import Form from './Form';
 
 class Jumbotron extends React.Component {
-    render() {
-        let image = require('../images/computer.jpg');
+  render() {
+    let image = require('../images/computer.jpg');
 
-        return(
-            <Section image={image}>
-                <Overlay>
-                    <MainText>
-                        <h1>נגיש. בועט. מתקדם.</h1>
-                        <div>
-                            <strong>קורות חיים דיגיטליים.</strong> הצטרף עכשיו למהפכה בקורות החיים, אל תישאר מאחור!
-                        </div>
-                    </MainText>
-                    <Form />
-                </Overlay>                    
-            </Section>
-        );
-    }
+    return (
+      <Section image={image}>
+        <Overlay>
+          <MainText>
+            <h1>נגיש. בועט. מתקדם.</h1>
+            <div>
+              <strong>קורות חיים דיגיטליים.</strong> הצטרף עכשיו למהפכה בקורות
+              החיים, אל תישאר מאחור!
+            </div>
+          </MainText>
+          <Form />
+        </Overlay>
+      </Section>
+    );
+  }
 }
 
 const Section = styled.div`
@@ -36,49 +37,48 @@ const Section = styled.div`
 `;
 
 const Overlay = styled.div`
-    width: 100%;
-    height: 100%;
-    min-height: 400px;
-    background-color: rgba(67, 65, 224, 0.5);
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-color: rgba(67, 65, 224, 0.5);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
 
-    @media (max-width: 768px) {
-        flex-wrap: wrap;
-    }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
-const MainText = styled.div`    
-    flex-basis: 50%;    
-    color: #fff;       
-    text-align: center;
-    order: 1;
-    padding: 20px;
-    
+const MainText = styled.div`
+  flex-basis: 50%;
+  color: #fff;
+  text-align: center;
+  order: 1;
+  padding: 20px;
 
-    & h1 {
-        margin-top: 0;
-        margin-bottom: 25px;
-        font-size: 75px;
-        font-weight: 700; 
-        line-height: 70px;
-    }
+  & h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 70px;
+  }
 
-    & div {
-        font-size: 25px;
-    }
+  & div {
+    font-size: ${props => props.theme.fontSizes.fontSize6};
+  }
 
-    @media (max-width: 1200px) {
-        font-size: 40px;
-        flex-basis: 50%;
-    }
+  @media (max-width: 1200px) {
+    font-size: ${props => props.theme.fontSizes.fontSize9};
+    flex-basis: 50%;
+  }
 
-    @media (max-width: 768px) {
-        font-size: 30px;
-        flex-basis: 100%;
-    }
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontSizes.fontSize7};
+    flex-basis: 100%;
+  }
 `;
 
 export default Jumbotron;
