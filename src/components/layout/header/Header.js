@@ -88,7 +88,7 @@ const HeaderWrapper = styled.div`
   top: 0;
   font-family: ${props => props.theme.fontFamilies.assistant};
   color: #666;
-  background-color: #fff;
+  background-color: ${props => props.theme.colors.white};
   direction: rtl;
   height: 100px;
   padding-right: 10%;
@@ -143,7 +143,7 @@ const HeaderItem = styled.div`
   }
 
   &:hover a {
-    color: #fff;
+    color: ${props => props.theme.colors.white};
   }
 
   border-bottom: ${props =>

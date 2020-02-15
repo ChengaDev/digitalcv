@@ -19,8 +19,8 @@ const FooterContainer = styled.div`
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: #000;
-  color: #fff;
+  background-color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.white};
   display: flex;
   align-items: center;
   flex-direction: row;

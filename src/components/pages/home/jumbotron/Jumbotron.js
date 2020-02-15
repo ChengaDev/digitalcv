@@ -53,7 +53,7 @@ const Overlay = styled.div`
 
 const MainText = styled.div`
   flex-basis: 50%;
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   text-align: center;
   order: 1;
   padding: 20px;

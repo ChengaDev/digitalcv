@@ -26,7 +26,7 @@ const MiniForm = styled.div`
   border: 1px #fff solid;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   margin: 25px;
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   text-align: center;
   padding: 30px 50px 30px 50px;
 
@@ -43,7 +43,7 @@ const MiniForm = styled.div`
     font-family: ${props => props.theme.fontFamilies.assistant};
     margin-top: 25px;
     width: 100%;
-    color: #fff;
+    color: ${props => props.theme.colors.white};
     background-color: #1a7dd7;
     border: none;
     line-height: 10px;

@@ -44,7 +44,7 @@ const Overlay = styled.div`
 const Title = styled.div`
   font-size: ${props => props.theme.fontSizes.fontSize9};
   font-family: ${props => props.theme.fontFamilies.assistant};
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   flex-basis: 100%;
 
   & h3 {
