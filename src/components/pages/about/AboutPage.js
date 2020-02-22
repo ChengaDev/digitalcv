@@ -5,7 +5,10 @@ class AboutPage extends React.Component {
   render() {
     return (
       <Wrapper>
-        <h1>מחפש עבודה? אתה חייב להופיע ברשת!</h1>
+        <h1>
+          מחפש עבודה?
+          <br /> אתה חייב להופיע ברשת!
+        </h1>
         <Content>
           <Paragraph>
             אנחנו חיים בעולם דיגיטלי, ובעולם שכזה שבו הכל נגיש מכל מקום או
@@ -36,6 +39,7 @@ class AboutPage extends React.Component {
 }
 
 const Wrapper = styled.div`
+  margin-top: 55px;
   padding-right: 30px;
   padding-left: 30px;
   direction: rtl;

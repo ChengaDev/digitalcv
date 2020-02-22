@@ -33,7 +33,9 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <HeaderWrapper>
-          <HeaderTitle>קורות חיים דיגיטליים</HeaderTitle>
+          <Link to='/'>
+            <HeaderTitle>קורות חיים דיגיטליים</HeaderTitle>
+          </Link>
           <HeaderItemsContainer>
             <HeaderItem selected={this.props.location.pathname === '/'}>
               <Link to='/'>בית</Link>
@@ -105,6 +107,7 @@ const HeaderTitle = styled.div`
   font-weight: 600;
   float: right;
   cursor: pointer;
+  color: #88948b !important;
 `;
 
 const HeaderItemsContainer = styled.div`

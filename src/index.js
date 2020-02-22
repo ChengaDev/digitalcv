@@ -9,10 +9,10 @@ import configureStore from './store/configureStore.prod';
 const store = configureStore();
 
 ReactDOM.render(
-    <Provider store={store}>
-        <ThemeProvider theme={theme}>
-            <App />
-        </ThemeProvider>
-    </Provider>,
-    document.querySelector('#root')
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </Provider>,
+  document.querySelector('#root')
 );
