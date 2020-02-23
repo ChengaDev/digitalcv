@@ -40,8 +40,10 @@ class Header extends React.Component {
             <HeaderItem selected={this.props.location.pathname === '/'}>
               <Link to='/'>בית</Link>
             </HeaderItem>
-            <HeaderItem selected={this.props.location.pathname === '/models'}>
-              <Link to='/models'>דוגמאות</Link>
+            <HeaderItem
+              selected={this.props.location.pathname === '/portfolio'}
+            >
+              <Link to='/portfolio'>תיק עבודות</Link>
             </HeaderItem>
             <HeaderItem selected={this.props.location.pathname === '/about'}>
               <Link to='/about'>עלינו</Link>
