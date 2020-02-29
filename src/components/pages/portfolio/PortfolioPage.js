@@ -6,7 +6,7 @@ class PortfolioPage extends React.Component {
   render() {
     return (
       <Wrapper>
-        <PageTitle>תיק עבודות</PageTitle>
+        <PageTitle>תיק עבודות של Kuala</PageTitle>
         <WorkItemsContainer>
           <WorkItemWrapper>
             <WorkItem>
@@ -16,7 +16,7 @@ class PortfolioPage extends React.Component {
               </WorkItemLink>
             </WorkItem>
           </WorkItemWrapper>
-          <WorkItemWrapper>
+          {/* <WorkItemWrapper>
             <WorkItem>
               <WorkItemLink target='_blank' href='https://www.chengazit.co.il'>
                 <WorkItemImage src={imagechen} />
@@ -31,7 +31,7 @@ class PortfolioPage extends React.Component {
                 <DarkOverlay />
               </WorkItemLink>
             </WorkItem>
-          </WorkItemWrapper>
+          </WorkItemWrapper> */}
         </WorkItemsContainer>
       </Wrapper>
     );
@@ -44,6 +44,8 @@ const Wrapper = styled.div`
 `;
 
 const PageTitle = styled.h1`
+  direction: rtl;
+  color: rgba(10, 32, 68);
   margin-bottom: 50px;
   text-align: center;
 `;
@@ -74,6 +76,14 @@ const WorkItemWrapper = styled.div`
   @media (max-width: 1000px) {
     flex-basis: 100%;
   }
+
+  @media (max-width: 420px) {
+    height: 220px;
+  }
+
+  @media (max-width: 400px) {
+    height: 200px;
+  }
 `;
 
 const WorkItem = styled.div`
@@ -83,6 +93,14 @@ const WorkItem = styled.div`
   box-shadow: 0px 2px 15px -2px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   position: relative;
+
+  @media (max-width: 420px) {
+    width: 350px;
+  }
+
+  @media (max-width: 400px) {
+    width: 320px;
+  }
 `;
 
 const WorkItemLink = styled.a`

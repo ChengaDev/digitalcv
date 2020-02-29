@@ -8,23 +8,30 @@ import ContactUsPage from './pages/contactUs/ContactUsPage';
 import AboutPage from './pages/about/AboutPage';
 import PortfolioPage from './pages/portfolio/PortfolioPage';
 import AutoScrollTop from './layout/AutoScrollTop';
+import styled from 'styled-components';
 
 const App = () => {
   return (
     <BrowserRouter>
       <AutoScrollTop>
         <Header />
-        <Switch>
-          <Route exact path='/' component={Main} />
-          <Route exact path='/about' component={AboutPage} />
-          <Route exact path='/portfolio' component={PortfolioPage} />
-          <Route exact path='/contactus' component={ContactUsPage} />
-          <Route exact path='/login' component={LoginPage} />
-        </Switch>
+        <Content>
+          <Switch>
+            <Route exact path='/' component={Main} />
+            <Route exact path='/about' component={AboutPage} />
+            <Route exact path='/portfolio' component={PortfolioPage} />
+            <Route exact path='/contactus' component={ContactUsPage} />
+            <Route exact path='/login' component={LoginPage} />
+          </Switch>
+        </Content>
         <Footer />
       </AutoScrollTop>
     </BrowserRouter>
   );
 };
+
+const Content = styled.div`
+  min-height: calc(100vh - 160px);
+`;
 
 export default App;

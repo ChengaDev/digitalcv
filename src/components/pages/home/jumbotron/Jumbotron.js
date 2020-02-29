@@ -12,8 +12,18 @@ class Jumbotron extends React.Component {
           <MainText>
             <h1>נגיש. בועט. מתקדם.</h1>
             <div>
-              <strong>קורות חיים דיגיטליים.</strong> הצטרף עכשיו למהפכה בקורות
-              החיים, אל תישאר מאחור!
+              <strong>קורות חיים מקוונים.</strong> הצטרף עכשיו למהפכה בקורות
+              החיים, אל תישאר מסמך
+              {/* <span
+                style={{
+                  color: 'lightcoral',
+                  textShadow: '0px 1px 11px #000',
+                  fontWeight: 'bold'
+                }}
+              >
+                מסמך בערימה
+              </span> */}
+              !
             </div>
           </MainText>
           <Form />

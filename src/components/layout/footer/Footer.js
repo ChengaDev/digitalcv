@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
       <FooterContainer>
         <div id='allRightsReserved'>
-          כל הזכויות שמורות - קורות חיים דיגיטליים ©
+          כל הזכויות שמורות לקואלה - קורות חיים מקוונים ©
         </div>
       </FooterContainer>
     );

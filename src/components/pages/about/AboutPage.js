@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import imagedigital from './images/man-791049_640.jpg';
 
 class AboutPage extends React.Component {
   render() {
     return (
       <Wrapper>
-        <h1>
-          מחפש עבודה?
-          <br /> אתה חייב להופיע ברשת!
-        </h1>
+        <h1>קואלה - Kuala</h1>
+        <h2>מהפכת קורות החיים המקוונים</h2>
         <Content>
           <Paragraph>
             אנחנו חיים בעולם דיגיטלי, ובעולם שכזה שבו הכל נגיש מכל מקום או
             מכשיר, אין סיבה שגם קורות החיים שלך לא יהיו נגישים מכל מקום!
           </Paragraph>
+          <DigitalImage alt='עולם דיגיטלי' src={imagedigital} />
           <Paragraph>
             בעולם דיגיטלי, אשר הופך לירוק יותר, ואשר מעודד הפחתת שימוש בנייר,
             קורות חיים מקוונים הם חלק מהשינוי הזה. מסמכים רבים הופכים לדיגיטליים
@@ -45,13 +45,28 @@ const Wrapper = styled.div`
   direction: rtl;
   font-family: ${props => props.theme.fontFamilies.assistant};
   text-align: center;
+
+  & h1 {
+    color: rgba(10, 32, 68);
+    margin-bottom: -20px;
+  }
+  h2 {
+    color: rgba(10, 32, 68);
+    margin-bottom: 10px;
+  }
+`;
+
+const DigitalImage = styled.img`
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
 `;
 
 const Content = styled.div`
   padding-bottom: 50px;
   display: inline-block;
   text-align: center;
-  max-width: 700px;
+  max-width: 900px;
 `;
 
 const Paragraph = styled.p`

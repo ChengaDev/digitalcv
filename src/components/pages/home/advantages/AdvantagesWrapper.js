@@ -7,7 +7,7 @@ class AdvantagesSection extends React.Component {
     return (
       <AdvantagesWrapper>
         <AdvantageTitle>
-          <div>למה זה עדיף?</div>
+          <div>למה קואלה?</div>
         </AdvantageTitle>
         <TitleLine />
         <AdvantangesContainer>

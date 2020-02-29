@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import AdvantagesSection from './advantages/AdvantagesWrapper';
 import BenefitSection from './benefits/BenefitContainer';
 import Jumbotron from './jumbotron/Jumbotron';
+import WhatWeOffer from './whatweoffer/WhatWeOffer';
 
 class Main extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Main extends React.Component {
         <Jumbotron />
         <AdvantagesSection />
         <BenefitSection />
+        <WhatWeOffer />
       </MainPageWrapper>
     );
   }

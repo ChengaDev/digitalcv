@@ -34,19 +34,19 @@ class Header extends React.Component {
       <React.Fragment>
         <HeaderWrapper>
           <Link to='/'>
-            <HeaderTitle>קורות חיים דיגיטליים</HeaderTitle>
+            <HeaderTitle>Kuala</HeaderTitle>
           </Link>
           <HeaderItemsContainer>
             <HeaderItem selected={this.props.location.pathname === '/'}>
               <Link to='/'>בית</Link>
             </HeaderItem>
+            <HeaderItem selected={this.props.location.pathname === '/about'}>
+              <Link to='/about'>עלינו</Link>
+            </HeaderItem>
             <HeaderItem
               selected={this.props.location.pathname === '/portfolio'}
             >
               <Link to='/portfolio'>תיק עבודות</Link>
-            </HeaderItem>
-            <HeaderItem selected={this.props.location.pathname === '/about'}>
-              <Link to='/about'>עלינו</Link>
             </HeaderItem>
             <HeaderItem
               selected={this.props.location.pathname === '/contactus'}
@@ -66,13 +66,13 @@ class Header extends React.Component {
               </Link>
             </MobileHeaderItem>
             <MobileHeaderItem>
-              <Link onClick={this.onLinkClicked} to='/models'>
-                דוגמאות
+              <Link onClick={this.onLinkClicked} to='/about'>
+                עלינו
               </Link>
             </MobileHeaderItem>
             <MobileHeaderItem>
-              <Link onClick={this.onLinkClicked} to='/about'>
-                עלינו
+              <Link onClick={this.onLinkClicked} to='/portfolio'>
+                תיק עבודות
               </Link>
             </MobileHeaderItem>
             <MobileHeaderItem>
@@ -88,6 +88,7 @@ class Header extends React.Component {
 }
 
 const HeaderWrapper = styled.div`
+  z-index: 1;
   position: sticky;
   top: 0;
   font-family: ${props => props.theme.fontFamilies.assistant};
@@ -102,14 +103,15 @@ const HeaderWrapper = styled.div`
 `;
 
 const HeaderTitle = styled.div`
+  color: rgba(10, 32, 68);
   display: inline-block;
   line-height: 100px;
-  font-size: ${props => props.theme.fontSizes.fontSize7};
+  font-size: ${props => props.theme.fontSizes.fontSize9};
   height: 100%;
   font-weight: 600;
   float: right;
   cursor: pointer;
-  color: #88948b !important;
+  /* color: #88948b !important; */
 `;
 
 const HeaderItemsContainer = styled.div`
@@ -173,6 +175,7 @@ const MenuIcon = styled.div`
 `;
 
 const MobileNavMenu = styled.div`
+  z-index: 1;
   position: fixed;
   top: 100px;
   width: 100%;
