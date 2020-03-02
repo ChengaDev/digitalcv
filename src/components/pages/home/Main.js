@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import AdvantagesSection from './advantages/AdvantagesWrapper';
-import BenefitSection from './benefits/BenefitContainer';
 import Jumbotron from './jumbotron/Jumbotron';
-import WhatWeOffer from './whatweoffer/WhatWeOffer';
+import AdvantagesSection from './advantages/AdvantagesWrapper';
+import DigitalTransformSection from './benefits/DigitalTransformSection';
+import WhatWeOfferSection from './whatweoffer/WhatWeOffer';
 
 class Main extends React.Component {
   render() {
@@ -11,8 +11,8 @@ class Main extends React.Component {
       <MainPageWrapper>
         <Jumbotron />
         <AdvantagesSection />
-        <BenefitSection />
-        <WhatWeOffer />
+        <DigitalTransformSection />
+        <WhatWeOfferSection />
       </MainPageWrapper>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class BenefitSection extends React.Component {
+class DigitalTransformSection extends React.Component {
   render() {
     let image = require('./images/paper.jpg');
     return (
@@ -23,7 +23,7 @@ box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     width: 100%;
     margin-top: 100px;
     height: auto;
-    min-height: 250px;
+    min-height: 400px;
     background: url('${props =>
       props.image}') no-repeat center center fixed;    
     background-size: cover;
@@ -37,7 +37,7 @@ const Overlay = styled.div`
   background-color: rgba(10, 32, 68, 0.7);
   height: 100%;
   width: 100%;
-  min-height: 250px;
+  min-height: 400px;
   text-align: center;
 `;
 
@@ -54,4 +54,4 @@ const Title = styled.div`
   }
 `;
 
-export default BenefitSection;
+export default DigitalTransformSection;

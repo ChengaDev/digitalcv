@@ -2,10 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 class AdvantangeItem extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-  }
-
   render() {
     return (
       <ItemWrapper icon={this.props.icon}>
@@ -18,15 +14,15 @@ class AdvantangeItem extends React.Component {
 
 const ItemWrapper = styled.div`
     text-align: center;
-    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    border-radius: 5px;
+    box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 15px 0 rgba(0, 0, 0, 0.35);
     flex-basis: 25%;
     min-width: 300px;
     height: 250px;
     margin-top: 30px;
     padding: 10px;
-    background-color: #d5dbe3;
+    background-color: ${props => props.theme.colors.gray1};
     
-
     &:before {
         margin-top: -70px;
         display: inline-block;

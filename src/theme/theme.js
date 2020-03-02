@@ -19,7 +19,16 @@ const theme = {
 
   colors: {
     black: '#000',
-    white: '#fff'
+    white: '#fff',
+
+    // green
+    green1: '#00b300',
+
+    // red
+    red1: '#b00000',
+
+    // gray
+    gray1: '#e0e0e0'
   }
 };
 

@@ -60,7 +60,7 @@ const AdvantangesContainer = styled.div`
 
 const AdvantagesWrapper = styled.section`
   width: 100%;
-  margin-top: 50px;
+  margin-top: 60px;
 `;
 
 const AdvantageTitle = styled.h2`
