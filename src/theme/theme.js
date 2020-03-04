@@ -28,7 +28,9 @@ const theme = {
     red1: '#b00000',
 
     // gray
-    gray1: '#e0e0e0'
+    gray1: '#e0e0e0',
+    gray2: '#9aa4a6',
+    gray3: '#757c7d'
   }
 };
 

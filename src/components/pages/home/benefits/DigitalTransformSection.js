@@ -18,7 +18,7 @@ class DigitalTransformSection extends React.Component {
 }
 
 const Section = styled.section`
-box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     margin-bottom: 50px;
     width: 100%;
     margin-top: 100px;

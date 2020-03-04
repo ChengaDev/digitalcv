@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import zapierApi from '../../../api/zapierApi';
 
 class ContactUsPage extends React.Component {
   constructor(props, context) {
@@ -24,7 +25,6 @@ class ContactUsPage extends React.Component {
       contentErrorMessage: '',
       formSubmittedSuccesfully: false
     };
-    this.clearErrorMessages();
   }
 
   handleInputChange(event) {
@@ -79,7 +79,18 @@ class ContactUsPage extends React.Component {
     const isFormValid = this.validateForm();
 
     if (isFormValid) {
-      this.setState({ formSubmittedSuccesfully: true });
+      zapierApi
+        .submitContactForm(
+          this.state.firstname,
+          this.state.lastname,
+          this.state.email,
+          this.state.phone,
+          this.state.subject,
+          this.state.content
+        )
+        .then(() => {
+          this.setState({ formSubmittedSuccesfully: true });
+        });
     }
 
     event.preventDefault();
@@ -218,6 +229,7 @@ const FormTitle = styled.h1`
   display: inline-block;
   width: 100%;
   text-align: center;
+  font-weight: none;
 `;
 
 const FormWrapper = styled.div`
