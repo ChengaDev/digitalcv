@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const modalRoot = document.getElementById('root-portal');
 
@@ -28,7 +28,21 @@ class Modal extends React.Component {
   }
 }
 
+const show = keyframes`
+  from {
+    transform: scale(0);
+    opacity: 0;
+    z-index: -1;
+  } 
+  to {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+  }
+`;
+
 const DarkOverlay = styled.div`
+  /* animation: ${show} 0.3s linear; */
   height: 100%;
   width: 100%;
   position: fixed;

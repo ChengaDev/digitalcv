@@ -13,7 +13,7 @@ class WhatWeOfferSection extends React.Component {
         <Offers>
           <Offer title='חבילת בסיס' />
           <Offer shouldShowRecommendedBadge title='חבילה משודרגת' />
-          <Offer title='חבילה פרימיום' />
+          <Offer title='חבילת פרימיום' />
         </Offers>
       </OffersSection>
     );

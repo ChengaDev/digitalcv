@@ -13,17 +13,7 @@ class Jumbotron extends React.Component {
             <h1>נגיש. בועט. מתקדם.</h1>
             <div>
               <strong>קורות חיים מקוונים.</strong> הצטרף עכשיו למהפכה בקורות
-              החיים, אל תישאר מסמך
-              {/* <span
-                style={{
-                  color: 'lightcoral',
-                  textShadow: '0px 1px 11px #000',
-                  fontWeight: 'bold'
-                }}
-              >
-                מסמך בערימה
-              </span> */}
-              !
+              החיים, אל תישאר מסמך!
             </div>
           </MainText>
           <Form />
