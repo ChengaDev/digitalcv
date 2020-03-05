@@ -11,9 +11,9 @@ class WhatWeOfferSection extends React.Component {
         </Title>
         <TitleLine />
         <Offers>
-          <Offer title='חבילת בסיס' />
-          <Offer shouldShowRecommendedBadge title='חבילה משודרגת' />
-          <Offer title='חבילת פרימיום' />
+          <Offer price='100' title='חבילת בסיס' />
+          <Offer price='500' shouldShowRecommendedBadge title='חבילה משודרגת' />
+          <Offer price='1,000' title='חבילת פרימיום' />
         </Offers>
       </OffersSection>
     );

@@ -5,26 +5,60 @@ class Footer extends React.Component {
   render() {
     return (
       <FooterContainer>
-        <div id='allRightsReserved'>
+        <AllRights id='allRightsReserved'>
           כל הזכויות שמורות לקואלה - קורות חיים מקוונים ©
-        </div>
+        </AllRights>
+        <SocialMediaIcons>
+          <SocialIcon>
+            <i class='fa fa-instagram'></i>
+          </SocialIcon>
+          <SocialIcon>
+            <i class='fa fa-facebook-official'></i>
+          </SocialIcon>
+          <SocialIcon>
+            <i class='fa fa-at'></i>
+          </SocialIcon>
+        </SocialMediaIcons>
       </FooterContainer>
     );
   }
 }
 
 const FooterContainer = styled.div`
+  direction: rtl;
   font-family: ${props => props.theme.fontFamilies.assistant};
   position: relative;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background-color: ${props => props.theme.colors.black};
   color: ${props => props.theme.colors.white};
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
+
+const AllRights = styled.div`
+  text-align: center;
+  width: 100%;
+`;
+
+const SocialMediaIcons = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+`;
+
+const SocialIcon = styled.div`
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  &:hover {
+    color: gray;
+  }
 `;
 
 export default Footer;
