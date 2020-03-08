@@ -18,12 +18,12 @@ class AdvantagesSection extends React.Component {
           />
           <AdvantageItem
             icon='wifi'
-            title='נגיש מכל מקום'
+            title='נגיש'
             content='לא צריך לסחוב איתך קבצים, מסמכים, כוננים וגם לא לשלוח לאף אחד במייל. קורות החיים שלך נמצאים ברשת כל הזמן!'
           />
           <AdvantageItem
             icon='whatshot'
-            title='מרשים יותר'
+            title='מרשים'
             content='לבלוט מבין ערימת מסמכים זו משימה בלתי אפשרית. אבל כשוקות החיים שלך מעוצבים כראוי, הם הופכים בולטים ומנקרי עיניים.'
           />
         </AdvantangesContainer>

@@ -2,6 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 class Footer extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.logo = require('../../../../public/LOGO_3.png');
+  }
+
   render() {
     return (
       <FooterContainer>
@@ -19,19 +24,23 @@ class Footer extends React.Component {
             <i class='fa fa-at'></i>
           </SocialIcon>
         </SocialMediaIcons>
+        <FooterLogoWrapper>
+          <FooterImage src={this.logo} />
+        </FooterLogoWrapper>
       </FooterContainer>
     );
   }
 }
 
 const FooterContainer = styled.div`
+  overflow: hidden;
   direction: rtl;
   font-family: ${props => props.theme.fontFamilies.assistant};
   position: relative;
   bottom: 0;
   width: 100%;
-  height: 80px;
-  background-color: ${props => props.theme.colors.black};
+  height: 150px;
+  background-color: #6e9da2;
   color: ${props => props.theme.colors.white};
   padding-top: 20px;
   padding-bottom: 20px;
@@ -59,6 +68,17 @@ const SocialIcon = styled.div`
   &:hover {
     color: gray;
   }
+`;
+
+const FooterLogoWrapper = styled.div`
+  text-align: center;
+`;
+
+const FooterImage = styled.img`
+  height: 200px;
+  position: relative;
+  top: -55px;
+  margin: 0 auto;
 `;
 
 export default Footer;

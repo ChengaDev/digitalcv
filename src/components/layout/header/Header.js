@@ -6,6 +6,8 @@ class Header extends React.Component {
   constructor(props, context) {
     super(props, context);
 
+    this.logo = require('../../../../public/LOGO_3.png');
+
     this.toggleMenuIcon = this.toggleMenuIcon.bind(this);
     this.onMenuIconClicked = this.onMenuIconClicked.bind(this);
     this.onLinkClicked = this.onLinkClicked.bind(this);
@@ -34,7 +36,8 @@ class Header extends React.Component {
       <React.Fragment>
         <HeaderWrapper>
           <Link to='/'>
-            <HeaderTitle>Kuala</HeaderTitle>
+            {/* <HeaderTitle>Kuala</HeaderTitle> */}
+            <HeaderImage src={this.logo} />
           </Link>
           <HeaderItemsContainer>
             <HeaderItem selected={this.props.location.pathname === '/'}>
@@ -102,17 +105,17 @@ const HeaderWrapper = styled.div`
   user-select: none;
 `;
 
-const HeaderTitle = styled.div`
-  color: rgba(10, 32, 68);
-  display: inline-block;
-  line-height: 100px;
-  font-size: ${props => props.theme.fontSizes.fontSize9};
-  height: 100%;
-  font-weight: 600;
-  float: right;
-  cursor: pointer;
-  /* color: #88948b !important; */
-`;
+// const HeaderTitle = styled.div`
+//   color: rgba(10, 32, 68);
+//   display: inline-block;
+//   line-height: 100px;
+//   font-size: ${props => props.theme.fontSizes.fontSize9};
+//   height: 100%;
+//   font-weight: 600;
+//   float: right;
+//   cursor: pointer;
+//   /* color: #88948b !important; */
+// `;
 
 const HeaderItemsContainer = styled.div`
   margin-right: 50px;
@@ -211,6 +214,12 @@ const MobileHeaderItem = styled.span`
   @media (max-width: 1000px) {
     display: block;
   }
+`;
+
+const HeaderImage = styled.img`
+  height: 280px;
+  margin-top: -90px;
+  margin-right: -40px;
 `;
 
 export default withRouter(Header);

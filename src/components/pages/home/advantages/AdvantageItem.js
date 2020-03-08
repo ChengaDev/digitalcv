@@ -50,6 +50,7 @@ const ItemWrapper = styled.div`
     }
 
     & h4 {
+        font-size: 35px;
         margin: 15px;
     }
 

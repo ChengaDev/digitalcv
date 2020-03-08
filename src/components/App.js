@@ -8,6 +8,7 @@ import Footer from '../components/layout/footer/Footer';
 import ContactUsPage from './pages/contactUs/ContactUsPage';
 import AboutPage from './pages/about/AboutPage';
 import PortfolioPage from './pages/portfolio/PortfolioPage';
+import ProductPage from './pages/product/ProductPage';
 import AutoScrollTop from './layout/AutoScrollTop';
 import styled from 'styled-components';
 
@@ -24,6 +25,7 @@ const App = () => {
               <Route exact path='/portfolio' component={PortfolioPage} />
               <Route exact path='/contactus' component={ContactUsPage} />
               <Route exact path='/login' component={LoginPage} />
+              <Route exact path='/product' component={ProductPage} />
             </Switch>
           </Content>
           <Footer />
