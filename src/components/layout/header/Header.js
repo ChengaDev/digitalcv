@@ -8,6 +8,7 @@ class Header extends React.Component {
 
     this.logo = require('../images/LOGO_3.png');
 
+    this.onHeaderLogoClicked = this.onHeaderLogoClicked.bind(this);
     this.toggleMenuIcon = this.toggleMenuIcon.bind(this);
     this.onMenuIconClicked = this.onMenuIconClicked.bind(this);
     this.onLinkClicked = this.onLinkClicked.bind(this);
@@ -15,6 +16,12 @@ class Header extends React.Component {
     this.state = {
       isMobileMenuOpen: false
     };
+  }
+
+  onHeaderLogoClicked() {
+    this.setState({
+      isMobileMenuOpen: false
+    });
   }
 
   onLinkClicked() {
@@ -35,8 +42,7 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <HeaderWrapper>
-          <Link to='/'>
-            {/* <HeaderTitle>Kuala</HeaderTitle> */}
+          <Link onClick={this.onHeaderLogoClicked} to='/'>
             <HeaderImage src={this.logo} />
           </Link>
           <HeaderItemsContainer>
@@ -192,10 +198,10 @@ const MobileNavMenu = styled.div`
 const MobileHeaderItem = styled.span`
   font-family: ${props => props.theme.fontFamilies.assistant};
   width: 100%;
-  height: 100px;
+  height: 60px;
   background-color: ${props => props.theme.colors.white};
   text-align: center;
-  line-height: 100px;
+  line-height: 60px;
   display: none;
   border-bottom: 1px solid #88948b;
 
@@ -203,7 +209,7 @@ const MobileHeaderItem = styled.span`
     text-decoration: none;
     display: block;
     color: #88948b;
-    font-size: ${props => props.theme.fontSizes.fontSize7};
+    font-size: ${props => props.theme.fontSizes.fontSize6};
 
     & hover {
       background-color: #88948b;
