@@ -6,7 +6,7 @@ class Header extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    this.logo = require('../../../../public/LOGO_3.png');
+    this.logo = require('../images/LOGO_3.png');
 
     this.toggleMenuIcon = this.toggleMenuIcon.bind(this);
     this.onMenuIconClicked = this.onMenuIconClicked.bind(this);

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 class Footer extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.logo = require('../../../../public/LOGO_3.png');
+    this.logo = require('../images/LOGO_3.png');
   }
 
   render() {
