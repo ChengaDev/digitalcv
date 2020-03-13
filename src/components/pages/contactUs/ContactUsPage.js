@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import zapierApi from '../../../api/zapierApi';
+import { isEmail, isEmpty } from 'validator';
 
 class ContactUsPage extends React.Component {
   constructor(props, context) {
@@ -42,32 +43,38 @@ class ContactUsPage extends React.Component {
 
     let isFormValid = true;
     // vaidate first name
-    if (this.state.firstname.length === 0) {
+    if (isEmpty(this.state.firstname)) {
       isFormValid = false;
       this.setState({ firstnameErrorMessage: 'שדה חובה' });
     }
     // validate last name
-    if (this.state.lastname.length === 0) {
+    if (isEmpty(this.state.lastname)) {
       isFormValid = false;
       this.setState({ lastnameErrorMessage: 'שדה חובה' });
     }
     // validate email
-    if (this.state.email.length === 0) {
+    if (isEmpty(this.state.email)) {
       isFormValid = false;
       this.setState({ emailErrorMessage: 'שדה חובה' });
+    } else {
+      if (!isEmail(this.state.email)) {
+        isFormValid = false;
+        this.setState({ emailErrorMessage: 'אימייל לא חוקי' });
+      }
     }
+
     // validate phone
-    if (this.state.phone.length === 0) {
+    if (isEmpty(this.state.phone)) {
       isFormValid = false;
       this.setState({ phoneErrorMessage: 'שדה חובה' });
     }
     // validate subject
-    if (this.state.subject.length === 0) {
+    if (isEmpty(this.state.subject)) {
       isFormValid = false;
       this.setState({ subjectErrorMessage: 'שדה חובה' });
     }
     // validate content
-    if (this.state.content.length === 0) {
+    if (isEmpty(this.state.content)) {
       isFormValid = false;
       this.setState({ contentErrorMessage: 'שדה חובה' });
     }
@@ -170,6 +177,8 @@ class ContactUsPage extends React.Component {
                 isValid={this.state.phoneErrorMessage.length === 0}
                 value={this.state.phone}
                 name='phone'
+                maxlength='10'
+                minLength='10'
                 tabIndex='4'
                 type='text'
                 onChange={this.handleInputChange}

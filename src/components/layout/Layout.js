@@ -1,5 +1,6 @@
 import React from 'react';
 import WelcomeModal from '../../portals/WelcomeModal';
+import { isMobile } from 'react-device-detect';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class Layout extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.shouldDisplayWelcomeModal && (
+        {!isMobile && this.state.shouldDisplayWelcomeModal && (
           <WelcomeModal onCloseClick={this.onCloseModalClick} />
         )}
         {this.props.children}

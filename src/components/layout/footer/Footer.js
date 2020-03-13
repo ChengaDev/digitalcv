@@ -15,13 +15,13 @@ class Footer extends React.Component {
         </AllRights>
         <SocialMediaIcons>
           <SocialIcon>
-            <i class='fa fa-instagram'></i>
+            <i className='fa fa-instagram'></i>
           </SocialIcon>
           <SocialIcon>
-            <i class='fa fa-facebook-official'></i>
+            <i className='fa fa-facebook-official'></i>
           </SocialIcon>
           <SocialIcon>
-            <i class='fa fa-at'></i>
+            <i className='fa fa-at'></i>
           </SocialIcon>
         </SocialMediaIcons>
         <FooterLogoWrapper>
