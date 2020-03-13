@@ -5,8 +5,8 @@ class AdvantangeItem extends React.Component {
   render() {
     return (
       <ItemWrapper icon={this.props.icon}>
-        <h4>{this.props.title}</h4>
-        <p>{this.props.content}</p>
+        <ItemTitle>{this.props.title}</ItemTitle>
+        <ItemContent>{this.props.content}</ItemContent>
       </ItemWrapper>
     );
   }
@@ -18,17 +18,15 @@ const ItemWrapper = styled.div`
     box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 15px 0 rgba(0, 0, 0, 0.35);
     flex-basis: 25%;
     min-width: 300px;
-    height: 250px;
     margin-top: 30px;
-    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
     background-color: ${props => props.theme.colors.gray1};
     
     &:before {
         margin-top: -70px;
         display: inline-block;
         width: 100px;
-        height: auto;
-        min-height: 100px;
         -webkit-border-radius: 50px;
         -moz-border-radius: 50px;
         border-radius: 50px;
@@ -47,11 +45,6 @@ const ItemWrapper = styled.div`
             animation: bgHover 1s;
             background-color: #6e8dcc;
         }
-    }
-
-    & h4 {
-        font-size: 35px;
-        margin: 15px;
     }
 
     & p {
@@ -84,6 +77,19 @@ const ItemWrapper = styled.div`
         flex-basis: 75%;
         margin-top: 80px;
     }
+`;
+
+const ItemTitle = styled.div`
+  font-size: ${props => props.theme.fontSizes.fontSize8};
+  margin-top: 15px;
+  margin-bottom: 35px;
+  font-weight: bold;
+`;
+
+const ItemContent = styled.div`
+  font-size: ${props => props.theme.fontSizes.fontSize6};
+  position: relative;
+  bottom: 25px;
 `;
 
 export default AdvantangeItem;
