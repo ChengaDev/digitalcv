@@ -137,7 +137,8 @@ const MiniForm = styled.div`
   flex-basis: 15%;
   order: 2;
   height: 300px;
-  min-width: 280px;
+  min-width: 250px;
+  max-width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px ${props => props.theme.colors.white} solid;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
