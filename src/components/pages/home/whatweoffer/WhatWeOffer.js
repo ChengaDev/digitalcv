@@ -61,7 +61,6 @@ const TitleLine = styled.div`
 `;
 
 const OffersSection = styled.div`
-  padding-right: 30px;
   padding-left: 30px;
   margin-top: 30px;
   margin: 0 auto;
@@ -71,7 +70,7 @@ const OffersSection = styled.div`
   flex-wrap: wrap;
 
   @media (max-width: 1600px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
