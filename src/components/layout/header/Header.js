@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link, withRouter } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
 
 const Header = props => {
   const logo = require('../images/LOGO_3.png');
@@ -44,7 +45,7 @@ const Header = props => {
     <React.Fragment>
       <HeaderWrapper>
         <Link onClick={onHeaderLogoClicked} to='/'>
-          <HeaderImage src={logo} />
+          <HeaderImage isMobile={isMobile} src={logo} />
         </Link>
         <HeaderItemsContainer>
           {links.map(link => {
@@ -148,7 +149,7 @@ const MenuIcon = styled.div`
   cursor: pointer;
 
   & i {
-    font-size: ${props => props.theme.fontSizes.fontSize8};
+    font-size: ${props => props.theme.fontSizes.fontSize9};
   }
 
   @media (max-width: 1000px) {
@@ -196,9 +197,9 @@ const MobileHeaderItem = styled.span`
 `;
 
 const HeaderImage = styled.img`
-  height: 280px;
-  margin-top: -90px;
-  margin-right: -40px;
+  height: ${props => (props.isMobile ? '215px' : '280px')};
+  margin-top: ${props => (props.isMobile ? '-55px' : '-90px')};
+  margin-right: -41px;
 `;
 
 export default withRouter(React.memo(Header));
