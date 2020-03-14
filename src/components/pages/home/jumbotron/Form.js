@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { isEmail, isEmpty } from 'validator';
+import { isMobile } from 'react-device-detect';
 
 class Form extends React.Component {
   constructor(props, context) {
@@ -129,7 +130,7 @@ class Form extends React.Component {
   }
 
   render() {
-    return <MiniForm>{this.renderContent()}</MiniForm>;
+    return <MiniForm isMobile={isMobile}>{this.renderContent()}</MiniForm>;
   }
 }
 
@@ -137,21 +138,21 @@ const MiniForm = styled.div`
   flex-basis: 15%;
   order: 2;
   height: 300px;
-  min-width: 250px;
-  max-width: 100%;
+  min-width: 280px;
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px ${props => props.theme.colors.white} solid;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   margin: 25px;
   color: ${props => props.theme.colors.white};
   text-align: center;
-  padding: 30px 50px 30px 50px;
+  padding: ${isMobile ? '25px' : '30px 50px 30px 50px'};
 
   & form {
     margin-top: 20px;
   }
 
   & input {
+    border: none;
     font-family: ${props => props.theme.fontFamilies.assistant};
     height: 35px;
     width: 100%;
