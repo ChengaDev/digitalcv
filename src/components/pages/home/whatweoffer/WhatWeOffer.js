@@ -2,23 +2,46 @@ import React from 'react';
 import styled from 'styled-components';
 import Offer from './Offer';
 
-class WhatWeOfferSection extends React.Component {
-  render() {
-    return (
-      <OffersSection>
-        <Title>
-          <div>מה אנחנו מציעים?</div>
-        </Title>
-        <TitleLine />
-        <Offers>
-          <Offer price='100' title='חבילת בסיס' />
-          <Offer price='500' shouldShowRecommendedBadge title='חבילה משודרגת' />
-          <Offer price='1,000' title='חבילת פרימיום' />
-        </Offers>
-      </OffersSection>
-    );
-  }
-}
+const WhatWeOfferSection = () => {
+  const offers = [
+    {
+      title: 'חבילת בסיס',
+      price: '100',
+      shouldShowRecommendedBadge: false
+    },
+    {
+      title: 'חבילה משודרגת',
+      price: '500',
+      shouldShowRecommendedBadge: true
+    },
+    {
+      title: 'חבילת פרימיום',
+      price: '1,000',
+      shouldShowRecommendedBadge: false
+    }
+  ];
+
+  return (
+    <OffersSection>
+      <Title>
+        <div>מה אנחנו מציעים?</div>
+      </Title>
+      <TitleLine />
+      <Offers>
+        {offers.map(offer => {
+          return (
+            <Offer
+              key={offer.title}
+              price={offer.price}
+              title={offer.title}
+              shouldShowRecommendedBadge={offer.shouldShowRecommendedBadge}
+            />
+          );
+        })}
+      </Offers>
+    </OffersSection>
+  );
+};
 
 const Title = styled.h2`
   font-size: ${props => props.theme.fontSizes.fontSize10};

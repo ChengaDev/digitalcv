@@ -1,21 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class DigitalTransformSection extends React.Component {
-  render() {
-    let image = require('./images/paper.jpg');
-    return (
-      <Section image={image}>
-        <Overlay>
-          <Title>
-            <div>עולם קורות החיים</div>
-            <h3>מתקדם לדיגיטל</h3>
-          </Title>
-        </Overlay>
-      </Section>
-    );
-  }
-}
+const DigitalTransformSection = () => {
+  const image = require('./images/paper.jpg');
+  return (
+    <Section image={image}>
+      <Overlay>
+        <Title>
+          <div>עולם קורות החיים</div>
+          <h3>מתקדם לדיגיטל</h3>
+        </Title>
+      </Overlay>
+    </Section>
+  );
+};
 
 const Section = styled.section`
     box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);

@@ -1,102 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link, withRouter } from 'react-router-dom';
 
-class Header extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+const Header = props => {
+  const logo = require('../images/LOGO_3.png');
+  const links = [
+    {
+      path: '/',
+      text: 'בית'
+    },
+    {
+      path: '/about',
+      text: 'עלינו'
+    },
+    {
+      path: '/portfolio',
+      text: 'תיק עבודות'
+    },
+    {
+      path: '/contactus',
+      text: 'צור קשר'
+    }
+  ];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    this.logo = require('../images/LOGO_3.png');
+  const onHeaderLogoClicked = () => {
+    setIsMobileMenuOpen(false);
+  };
 
-    this.onHeaderLogoClicked = this.onHeaderLogoClicked.bind(this);
-    this.toggleMenuIcon = this.toggleMenuIcon.bind(this);
-    this.onMenuIconClicked = this.onMenuIconClicked.bind(this);
-    this.onLinkClicked = this.onLinkClicked.bind(this);
+  const toggleMenuIcon = () => {
+    setIsMobileMenuOpen(prevIsMobileMenuOpen => !prevIsMobileMenuOpen);
+  };
 
-    this.state = {
-      isMobileMenuOpen: false
-    };
-  }
+  const onLinkClicked = () => {
+    toggleMenuIcon();
+  };
 
-  onHeaderLogoClicked() {
-    this.setState({
-      isMobileMenuOpen: false
-    });
-  }
+  const onMenuIconClicked = () => {
+    toggleMenuIcon();
+  };
 
-  onLinkClicked() {
-    this.toggleMenuIcon();
-  }
-
-  onMenuIconClicked() {
-    this.toggleMenuIcon();
-  }
-
-  toggleMenuIcon() {
-    this.setState({
-      isMobileMenuOpen: !this.state.isMobileMenuOpen
-    });
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <HeaderWrapper>
-          <Link onClick={this.onHeaderLogoClicked} to='/'>
-            <HeaderImage src={this.logo} />
-          </Link>
-          <HeaderItemsContainer>
-            <HeaderItem selected={this.props.location.pathname === '/'}>
-              <Link to='/'>בית</Link>
-            </HeaderItem>
-            <HeaderItem selected={this.props.location.pathname === '/about'}>
-              <Link to='/about'>עלינו</Link>
-            </HeaderItem>
-            <HeaderItem
-              selected={this.props.location.pathname === '/portfolio'}
-            >
-              <Link to='/portfolio'>תיק עבודות</Link>
-            </HeaderItem>
-            <HeaderItem
-              selected={this.props.location.pathname === '/contactus'}
-            >
-              <Link to='/contactus'>צור קשר</Link>
-            </HeaderItem>
-          </HeaderItemsContainer>
-          <MenuIcon onClick={this.onMenuIconClicked}>
-            <i className='material-icons'>menu</i>
-          </MenuIcon>
-        </HeaderWrapper>
-        {
-          <MobileNavMenu isOpen={this.state.isMobileMenuOpen}>
-            <MobileHeaderItem>
-              <Link onClick={this.onLinkClicked} to='/'>
-                בית
-              </Link>
-            </MobileHeaderItem>
-            <MobileHeaderItem>
-              <Link onClick={this.onLinkClicked} to='/about'>
-                עלינו
-              </Link>
-            </MobileHeaderItem>
-            <MobileHeaderItem>
-              <Link onClick={this.onLinkClicked} to='/portfolio'>
-                תיק עבודות
-              </Link>
-            </MobileHeaderItem>
-            <MobileHeaderItem>
-              <Link onClick={this.onLinkClicked} to='/contactus'>
-                צור קשר
-              </Link>
-            </MobileHeaderItem>
-          </MobileNavMenu>
-        }
-      </React.Fragment>
-    );
-  }
-}
+  return (
+    <React.Fragment>
+      <HeaderWrapper>
+        <Link onClick={onHeaderLogoClicked} to='/'>
+          <HeaderImage src={logo} />
+        </Link>
+        <HeaderItemsContainer>
+          {links.map(link => {
+            return (
+              <HeaderItem
+                key={link.path}
+                selected={props.location.pathname === link.path}
+              >
+                <Link to={link.path}>{link.text}</Link>
+              </HeaderItem>
+            );
+          })}
+        </HeaderItemsContainer>
+        <MenuIcon onClick={onMenuIconClicked}>
+          <i className='material-icons'>menu</i>
+        </MenuIcon>
+      </HeaderWrapper>
+      {
+        <MobileNavMenu isOpen={isMobileMenuOpen}>
+          {links.map(link => {
+            return (
+              <MobileHeaderItem key={link.path}>
+                <Link onClick={onLinkClicked} to={link.path}>
+                  {link.text}
+                </Link>
+              </MobileHeaderItem>
+            );
+          })}
+        </MobileNavMenu>
+      }
+    </React.Fragment>
+  );
+};
 
 const HeaderWrapper = styled.div`
+  user-select: none;
   z-index: 1;
   position: sticky;
   top: 0;
@@ -110,18 +94,6 @@ const HeaderWrapper = styled.div`
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   user-select: none;
 `;
-
-// const HeaderTitle = styled.div`
-//   color: rgba(10, 32, 68);
-//   display: inline-block;
-//   line-height: 100px;
-//   font-size: ${props => props.theme.fontSizes.fontSize9};
-//   height: 100%;
-//   font-weight: 600;
-//   float: right;
-//   cursor: pointer;
-//   /* color: #88948b !important; */
-// `;
 
 const HeaderItemsContainer = styled.div`
   margin-right: 50px;
@@ -168,6 +140,7 @@ const HeaderItem = styled.div`
 `;
 
 const MenuIcon = styled.div`
+  user-select: none;
   color: #88948b;
   float: left;
   display: none;
@@ -228,4 +201,4 @@ const HeaderImage = styled.img`
   margin-right: -40px;
 `;
 
-export default withRouter(Header);
+export default withRouter(React.memo(Header));

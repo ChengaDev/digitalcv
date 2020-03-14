@@ -262,10 +262,6 @@ const FormGroup = styled.div`
     clear: both;
   }
 
-  & label {
-    /* font-weight: bold; */
-  }
-
   & input {
     font-family: ${props => props.theme.fontFamilies.assistant};
     margin-top: 10px;

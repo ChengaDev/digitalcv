@@ -1,32 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import styled, { keyframes } from 'styled-components';
 
-const modalRoot = document.getElementById('root-portal');
+const Modal = props => {
+  const el = document.createElement('div');
+  const modalRoot = document.getElementById('root-portal');
 
-class Modal extends React.Component {
-  constructor(props) {
-    super(props);
+  useEffect(() => {
+    modalRoot.appendChild(el);
 
-    this.el = document.createElement('div');
-  }
+    // Specify how to clean up after this effect:
+    return () => modalRoot.removeChild(el);
+  });
 
-  componentDidMount() {
-    modalRoot.appendChild(this.el);
-  }
-
-  componentWillUnmount() {
-    modalRoot.removeChild(this.el);
-  }
-
-  renderWithDarkOverlay() {
-    return <DarkOverlay>{this.props.children}</DarkOverlay>;
-  }
-
-  render() {
-    return ReactDOM.createPortal(this.renderWithDarkOverlay(), this.el);
-  }
-}
+  return ReactDOM.createPortal(<DarkOverlay>{props.children}</DarkOverlay>, el);
+};
 
 const show = keyframes`
   from {

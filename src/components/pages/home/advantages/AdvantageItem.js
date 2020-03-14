@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class AdvantangeItem extends React.Component {
-  render() {
-    return (
-      <ItemWrapper icon={this.props.icon}>
-        <ItemTitle>{this.props.title}</ItemTitle>
-        <ItemContent>{this.props.content}</ItemContent>
-      </ItemWrapper>
-    );
-  }
-}
+const AdvantangeItem = props => {
+  return (
+    <ItemWrapper icon={props.icon}>
+      <ItemTitle>{props.title}</ItemTitle>
+      <ItemContent>{props.content}</ItemContent>
+    </ItemWrapper>
+  );
+};
 
 const ItemWrapper = styled.div`
     text-align: center;
@@ -42,7 +40,6 @@ const ItemWrapper = styled.div`
     
     &:hover {
         &:before {
-            animation: bgHover 1s;
             background-color: #6e8dcc;
         }
     }
@@ -51,16 +48,6 @@ const ItemWrapper = styled.div`
         font-size: ${props => props.theme.fontSizes.fontSize4};
         padding-left: 20px;
         padding-right: 20px;
-    }
-
-    @keyframes bgHover {
-        from {
-            background-color: #6e8dcc;
-        }
-    
-        to {
-            background-color: #5a6161;
-        }
     }
 
     @media (max-width: 1500px) {

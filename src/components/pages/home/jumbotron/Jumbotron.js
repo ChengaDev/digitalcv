@@ -2,26 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import Form from './Form';
 
-class Jumbotron extends React.Component {
-  render() {
-    let image = require('../images/computer.jpg');
+const Jumbotron = () => {
+  const image = require('../images/computer.jpg');
 
-    return (
-      <Section image={image}>
-        <Overlay>
-          <MainText>
-            <h1>נגיש. בועט. מתקדם.</h1>
-            <div>
-              <strong>קורות חיים מקוונים.</strong> הצטרף עכשיו למהפכה בקורות
-              החיים, אל תישאר מסמך!
-            </div>
-          </MainText>
-          <Form />
-        </Overlay>
-      </Section>
-    );
-  }
-}
+  return (
+    <Section image={image}>
+      <Overlay>
+        <MainText>
+          <h1>נגיש. בועט. מתקדם.</h1>
+          <div>
+            <strong>קורות חיים מקוונים.</strong> הצטרף עכשיו למהפכה בקורות
+            החיים, אל תישאר מסמך!
+          </div>
+        </MainText>
+        <Form />
+      </Overlay>
+    </Section>
+  );
+};
 
 const Section = styled.div`
     height: 500px;

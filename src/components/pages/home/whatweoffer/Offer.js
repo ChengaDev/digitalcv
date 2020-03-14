@@ -1,29 +1,27 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-class Offer extends React.Component {
-  render() {
-    return (
-      <OfferWrapper>
-        {this.props.shouldShowRecommendedBadge && (
-          <RecommendedBadge>מומלץ!</RecommendedBadge>
-        )}
-        <OfferItem>
-          <OfferTitle>{this.props.title}</OfferTitle>
-          <Services>
-            <Service>דומיין על שמך</Service>
-            <Service>עיצוב לבחירתך</Service>
-            <Service>טופס צור קשר</Service>
-            <Service>שכתוב ושדרוג תוכן</Service>
-            <Service>תמיכה במספר שפות</Service>
-          </Services>
-          <Price>{this.props.price + '₪'}</Price>
-          <OrderNowButton>הזמן עכשיו</OrderNowButton>
-        </OfferItem>
-      </OfferWrapper>
-    );
-  }
-}
+const Offer = props => {
+  return (
+    <OfferWrapper>
+      {props.shouldShowRecommendedBadge && (
+        <RecommendedBadge>מומלץ!</RecommendedBadge>
+      )}
+      <OfferItem>
+        <OfferTitle>{props.title}</OfferTitle>
+        <Services>
+          <Service>דומיין על שמך</Service>
+          <Service>עיצוב לבחירתך</Service>
+          <Service>טופס צור קשר</Service>
+          <Service>שכתוב ושדרוג תוכן</Service>
+          <Service>תמיכה במספר שפות</Service>
+        </Services>
+        <Price>{props.price + '₪'}</Price>
+        <OrderNowButton>הזמן עכשיו</OrderNowButton>
+      </OfferItem>
+    </OfferWrapper>
+  );
+};
 
 const swing = keyframes`
     15%

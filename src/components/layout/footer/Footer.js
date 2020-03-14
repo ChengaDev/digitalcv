@@ -1,36 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class Footer extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-    this.logo = require('../images/LOGO_3.png');
-  }
+const Footer = () => {
+  const logo = require('../images/LOGO_3.png');
 
-  render() {
-    return (
-      <FooterContainer>
-        <AllRights id='allRightsReserved'>
-          כל הזכויות שמורות לקואלה - קורות חיים מקוונים ©
-        </AllRights>
-        <SocialMediaIcons>
-          <SocialIcon>
-            <i className='fa fa-instagram'></i>
-          </SocialIcon>
-          <SocialIcon>
-            <i className='fa fa-facebook-official'></i>
-          </SocialIcon>
-          <SocialIcon>
-            <i className='fa fa-at'></i>
-          </SocialIcon>
-        </SocialMediaIcons>
-        <FooterLogoWrapper>
-          <FooterImage src={this.logo} />
-        </FooterLogoWrapper>
-      </FooterContainer>
-    );
-  }
-}
+  return (
+    <FooterContainer>
+      <AllRights id='allRightsReserved'>
+        כל הזכויות שמורות לקואלה - קורות חיים מקוונים ©
+      </AllRights>
+      <SocialMediaIcons>
+        <SocialIcon>
+          <i className='fa fa-instagram'></i>
+        </SocialIcon>
+        <SocialIcon>
+          <i className='fa fa-facebook-official'></i>
+        </SocialIcon>
+        <SocialIcon>
+          <i className='fa fa-at'></i>
+        </SocialIcon>
+      </SocialMediaIcons>
+      <FooterLogoWrapper>
+        <FooterImage src={logo} />
+      </FooterLogoWrapper>
+    </FooterContainer>
+  );
+};
 
 const FooterContainer = styled.div`
   overflow: hidden;

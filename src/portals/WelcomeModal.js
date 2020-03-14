@@ -2,23 +2,20 @@ import Modal from './Modal';
 import React from 'react';
 import styled from 'styled-components';
 
-class WelcomeModal extends React.Component {
-  render() {
-    return (
-      <Modal>
-        <ModalWrapper>
-          <div>ברוכים הבאים לקואלה!</div>
-          <ModalText>
-            מתרגשים להיות באוויר :)
-            <br /> מבצעי הכרות מטורפים ללקוחות חדשים, מהרו להצטרף ולהפוך
-            למקוונים!
-          </ModalText>
-          <CloseButton onClick={this.props.onCloseClick}>סגור</CloseButton>
-        </ModalWrapper>
-      </Modal>
-    );
-  }
-}
+const WelcomeModal = props => {
+  return (
+    <Modal>
+      <ModalWrapper>
+        <div>ברוכים הבאים לקואלה!</div>
+        <ModalText>
+          מתרגשים להיות באוויר :)
+          <br /> מבצעי הכרות מטורפים ללקוחות חדשים, מהרו להצטרף ולהפוך למקוונים!
+        </ModalText>
+        <CloseButton onClick={props.onCloseClick}>סגור</CloseButton>
+      </ModalWrapper>
+    </Modal>
+  );
+};
 
 const ModalWrapper = styled.div`
   direction: rtl;

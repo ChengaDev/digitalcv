@@ -2,35 +2,49 @@ import React from 'react';
 import AdvantageItem from './AdvantageItem';
 import styled from 'styled-components';
 
-class AdvantagesSection extends React.Component {
-  render() {
-    return (
-      <AdvantagesWrapper>
-        <AdvantageTitle>
-          <div>למה קואלה?</div>
-        </AdvantageTitle>
-        <TitleLine />
-        <AdvantangesContainer>
-          <AdvantageItem
-            icon='eco'
-            title='אקולוגי'
-            content='מייתרים את השימוש בנייר! מרבית השימושים בנייר הופכים אט אט למקוונים, כך גם קורה בקורות החיים אשר הופכים למקוונים.'
-          />
-          <AdvantageItem
-            icon='wifi'
-            title='נגיש'
-            content='לא צריך לסחוב איתך קבצים, מסמכים, כוננים וגם לא לשלוח לאף אחד במייל. קורות החיים שלך נמצאים ברשת כל הזמן!'
-          />
-          <AdvantageItem
-            icon='whatshot'
-            title='מרשים'
-            content='לבלוט מבין ערימת מסמכים זו משימה בלתי אפשרית. אבל כשוקות החיים שלך מעוצבים כראוי, הם הופכים בולטים ומנקרי עיניים.'
-          />
-        </AdvantangesContainer>
-      </AdvantagesWrapper>
-    );
-  }
-}
+const AdvantagesSection = () => {
+  const items = [
+    {
+      icon: 'eco',
+      title: 'אקולוגי',
+      content:
+        'מייתרים את השימוש בנייר! מרבית השימושים בנייר הופכים אט אט למקוונים, כך גם קורה בקורות החיים אשר הופכים למקוונים.'
+    },
+    {
+      icon: 'wifi',
+      title: 'נגיש',
+      content:
+        'לא צריך לסחוב איתך קבצים, מסמכים, כוננים וגם לא לשלוח לאף אחד במייל. קורות החיים שלך נמצאים ברשת כל הזמן!'
+    },
+    {
+      icon: 'whatshot',
+      title: 'מרשים',
+      content:
+        'לבלוט מבין ערימת מסמכים זו משימה בלתי אפשרית. אבל כשוקות החיים שלך מעוצבים כראוי, הם הופכים בולטים ומנקרי עיניים.'
+    }
+  ];
+
+  return (
+    <AdvantagesWrapper>
+      <AdvantageTitle>
+        <div>למה קואלה?</div>
+      </AdvantageTitle>
+      <TitleLine />
+      <AdvantangesContainer>
+        {items.map(item => {
+          return (
+            <AdvantageItem
+              key={item.title}
+              icon={item.icon}
+              title={item.title}
+              content={item.content}
+            />
+          );
+        })}
+      </AdvantangesContainer>
+    </AdvantagesWrapper>
+  );
+};
 
 const AdvantangesContainer = styled.div`
   width: 70%;
