@@ -43,11 +43,11 @@ const Header = props => {
 
   return (
     <React.Fragment>
-      <HeaderWrapper>
+      <HeaderWrapper isMobile={isMobile}>
         <Link onClick={onHeaderLogoClicked} to='/'>
           <HeaderImage isMobile={isMobile} src={logo} />
         </Link>
-        <HeaderItemsContainer>
+        <HeaderItemsContainer isMobile={isMobile}>
           {links.map(link => {
             return (
               <HeaderItem
@@ -63,7 +63,7 @@ const Header = props => {
           <i className='material-icons'>menu</i>
         </MenuIcon>
       </HeaderWrapper>
-      {
+      {isMobile && (
         <MobileNavMenu isOpen={isMobileMenuOpen}>
           {links.map(link => {
             return (
@@ -75,7 +75,7 @@ const Header = props => {
             );
           })}
         </MobileNavMenu>
-      }
+      )}
     </React.Fragment>
   );
 };
@@ -89,7 +89,7 @@ const HeaderWrapper = styled.div`
   color: #666;
   background-color: ${props => props.theme.colors.white};
   direction: rtl;
-  height: 100px;
+  height: ${props => (props.isMobile ? '80px' : '100px')};
   padding-right: 10%;
   padding-left: 10%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
@@ -100,7 +100,7 @@ const HeaderItemsContainer = styled.div`
   margin-right: 50px;
   height: 100%;
   display: inline-block;
-  line-height: 100px;
+  line-height: ${props => (props.isMobile ? '80px' : '100px')};
   float: left;
 
   @media (max-width: 1000px) {
@@ -145,7 +145,7 @@ const MenuIcon = styled.div`
   color: #88948b;
   float: left;
   display: none;
-  margin-top: 33px;
+  margin-top: 21px;
   cursor: pointer;
 
   & i {
@@ -160,7 +160,7 @@ const MenuIcon = styled.div`
 const MobileNavMenu = styled.div`
   z-index: 1;
   position: fixed;
-  top: 100px;
+  top: 80px;
   width: 100%;
   max-height: ${props => (props.isOpen ? '500px' : '0')};
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
@@ -198,7 +198,7 @@ const MobileHeaderItem = styled.span`
 
 const HeaderImage = styled.img`
   height: ${props => (props.isMobile ? '215px' : '280px')};
-  margin-top: ${props => (props.isMobile ? '-55px' : '-90px')};
+  margin-top: ${props => (props.isMobile ? '-65px' : '-90px')};
   margin-right: -41px;
 `;
 
